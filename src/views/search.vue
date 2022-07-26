@@ -51,12 +51,19 @@
                   <!-- 判断谁应该有箭头 -->
                   <a>
                     综合
-                    <samp v-show="isOne"> 11 </samp>
+
+                    <svg class="icon" v-show="isOne" aria-hidden="true">
+                      <use xlink:href="#icon-jiantou_xiangxia"></use>
+                    </svg>
                   </a>
                 </li>
                 <li :class="{ active: isTwo }" @click="changeOrder('2')">
                   <a
-                    >价格<samp v-show="isTwo">11</samp>
+                    >价格
+                    <svg class="icon" v-show="isTwo" aria-hidden="true">
+                      <use xlink:href="#icon-jiantou_xiangshang"></use>
+                    </svg>
+
                     <!-- class="iconfont" :class="{ 'icon-UP': isAsc, 'icon-DOWN':
                     isDesc }" -->
                   </a>
@@ -418,6 +425,9 @@ export default {
                 padding: 11px 15px;
                 color: #777;
                 text-decoration: none;
+                .icon {
+                  font-size: 14px;
+                }
               }
 
               &.active {

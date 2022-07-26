@@ -16,7 +16,8 @@ Vue.component(PaginaTion.name, PaginaTion);
 // 引入Mock Server.js ----mock数据
 import "@/mock/mockServer";
 Vue.config.productionTip = false;
-
+// 引入图标
+import "@/assets/iconfont";
 new Vue({
   render: (h) => h(App),
   // 全局事件总线,$bus就是当前应用的vm
