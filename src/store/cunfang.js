@@ -1,11 +1,15 @@
 const state = {
   aaa: [],
+  floor:[],
 };
 const mutations = {
   setAaa(state, all) {
     state.aaa = all;
-    console.log("kaishi", all);
   },
+  setFloor(state,floor){
+    state.floor = floor;
+    console.log("zzz",floor)
+  }
 };
 const actions = {};
 const getters = {};
