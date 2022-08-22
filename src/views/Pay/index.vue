@@ -76,7 +76,7 @@
         <div class="hr"></div>
 
         <div class="submit">
-          <router-link class="btn" to="/paysuccess">立即支付</router-link>
+          <a class="btn" @click="open">立即支付</a>
         </div>
         <div class="otherpay">
           <div class="step-tit">
@@ -93,6 +93,7 @@
 </template>
 
 <script>
+import QRcode from "qrcode";
 export default {
   name: "Pay",
   computed: {
@@ -106,9 +107,23 @@ export default {
   methods: {
     async getPayInfo() {
       await this.$API.reqPayInfo(this.orderId).then((res) => {
-        console.log(res);
+        console.log("////",res);
       });
-    },
+    }, 
+    // 支付
+    async open() {
+        // let result = await QRcode.toDataURL()
+        
+        this.$alert('<strong>这是 <i>HTML</i> 片段</strong>', 'HTML 片段', {
+          dangerouslyUseHTMLString: true, //将字符串转换为标签
+          center: true, //居中
+          showClose: false, //右上角的关闭按钮不显示
+          confirmButtonText: "支付成功", //确定按钮的文本
+          showCancelButton: true, //显示取消按钮
+          cancelButtonText: "支付遇见问题", //取消按钮的文本
+          closeOnClickModal: true, //点击遮罩层关闭messagebox
+        });
+      }
   },
 };
 </script>
