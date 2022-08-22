@@ -171,6 +171,7 @@ export default {
       }
     },
     // 修改某一个产品选中状态
+    // 修改某一个产品选中状态
     async getCheckedById(list, event) {
       let params = {
         skuId: list.skuId,
