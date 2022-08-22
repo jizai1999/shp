@@ -17,12 +17,8 @@
           :key="index1"
         >
           <li class="cart-list-con1">
-            <input
-              type="checkbox"
-              name="chk_list"
-              :checked="list.isChecked == 1"
-              @change="getCheckedById(list, $event)"
-            />
+            <input type="checkbox" name="chk_list" :checked="list.isChecked == 1" 
+            @change="getCheckedById(list, $event)"/>
           </li>
           <li class="cart-list-con2">
             <img :src="list.imgUrl" />
@@ -34,12 +30,7 @@
             <span class="price">￥{{ list.cartPrice }}.00</span>
           </li>
           <li class="cart-list-con5">
-            <a
-              href="javascript:void(0)"
-              class="mins"
-              @click="handler('jian', -1, list)"
-              >-</a
-            >
+            <a href="javascript:void(0)" class="mins" @click="handler('jian', -1, list)">-</a>
             <input
               autocomplete="off"
               type="text"
@@ -51,9 +42,9 @@
             <a
               href="javascript:void(0)"
               class="plus"
-              @click="handler('jia', +1, list)"
-              >+</a
-            >
+              @click="handler('jia', +1, list)">
+              +
+            </a>
           </li>
           <li class="cart-list-con6">
             <span class="sum">{{ list.skuNum * list.cartPrice }}</span>
